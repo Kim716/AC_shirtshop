@@ -131,3 +131,153 @@ table {
 a {
   text-decoration: none;
 }
+
+/* MY CSS */
+/* header */
+header {
+  position: fixed;
+  z-index: 9;
+
+  width: 100%;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 0 5px 0 #eee;
+}
+
+.nav-bar {
+  width: 100%;
+  height: 100%;
+  padding: 0 30px;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  height: 90%;
+  margin-right: 10px;
+}
+
+.logo-text {
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 50px;
+}
+
+.links {
+  position: absolute;
+  top: 50px;
+  left: 0;
+
+  width: 100%;
+  transition: transform 0.2s ease-out;
+  transform: scale(1, 0);
+  transform-origin: top;
+}
+
+.links > a {
+  display: block;
+  width: 100%;
+  padding: 10px 0;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid #ccc;
+
+  color: transparent;
+  /* 原本是設定 opacity，但因為我的 HTML 架構沒有再包一層，所以收合時會導致三個 a 整條瞬間消失，而沒有動畫（opacity0好像等於瞬間沒有） */
+}
+
+.icon {
+  font-size: 1.2rem;
+  color: #555;
+  margin: 2px;
+}
+
+.show-in-tab {
+  display: none;
+}
+
+/* hamburger */
+
+.navbar-toggle {
+  display: none;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  position: relative;
+  bottom: 5px;
+  display: inline-block;
+
+  width: 20px;
+  height: 3px;
+  background: #555;
+}
+
+.hamburger::before,
+.hamburger::after {
+  position: absolute;
+  left: 0;
+  content: "";
+}
+
+.hamburger::before {
+  bottom: 8px;
+}
+
+.hamburger::after {
+  top: 8px;
+}
+
+.navbar-toggle:checked ~ .links {
+  display: unset;
+  transform: scale(1, 1);
+}
+
+.navbar-toggle:checked ~ .links > a {
+  transition: color 0.2s ease-out 0.15s;
+  color: #555;
+}
+
+@media screen and (min-width: 768px) {
+  .nav-bar {
+    max-width: 1200px;
+  }
+  .logo {
+    order: -1;
+  }
+  .links {
+    position: unset;
+    display: inline;
+    width: auto;
+    transform: unset;
+  }
+
+  .links a {
+    display: inline;
+    border: none;
+    padding: 10px 20px;
+    color: #555;
+  }
+
+  .iconsbar-1 {
+    display: none;
+  }
+
+  .iconsbar-2 {
+    order: 1;
+  }
+
+  .show-in-tab {
+    display: unset;
+  }
+}

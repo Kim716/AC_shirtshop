@@ -160,6 +160,7 @@ header {
   height: 100%;
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .logo-img {
@@ -196,10 +197,19 @@ header {
   /* 原本是設定 opacity，但因為我的 HTML 架構沒有再包一層，所以收合時會導致三個 a 整條瞬間消失，而沒有動畫（opacity0好像等於瞬間沒有） */
 }
 
+.nav-bar .links:hover > a:hover {
+  color: rgb(240, 103, 30);
+}
+
 .icon {
   font-size: 1.2rem;
   color: #555;
   margin: 2px;
+  cursor: pointer;
+}
+
+.icon:hover {
+  color: rgb(240, 103, 30);
 }
 
 .show-in-tab {
@@ -210,6 +220,10 @@ header {
 
 .navbar-toggle {
   display: none;
+}
+
+.navbar-toggle-label {
+  cursor: pointer;
 }
 
 .hamburger,
@@ -239,13 +253,19 @@ header {
   top: 8px;
 }
 
+.navbar-toggle-label:hover .hamburger,
+.navbar-toggle-label:hover .hamburger::before,
+.navbar-toggle-label:hover .hamburger::after {
+  background: rgb(240, 103, 30);
+}
+
 .navbar-toggle:checked ~ .links {
   display: unset;
   transform: scale(1, 1);
 }
 
 .navbar-toggle:checked ~ .links > a {
-  transition: color 0.2s ease-out 0.15s;
+  /* transition: color 0.2s ease-out; */
   color: #555;
 }
 
@@ -286,6 +306,10 @@ header {
   grid-gap: 15px;
 }
 
+.clothes-item {
+  cursor: pointer;
+}
+
 .clothes-img {
   position: relative;
   width: 100%;
@@ -318,6 +342,12 @@ header {
   padding: 10px;
   background-color: #fff;
   border-radius: 50%;
+  border: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.action-btn:hover i {
+  color: rgb(240, 103, 30);
 }
 
 .clothes-item > p {
@@ -402,13 +432,24 @@ header {
   text-align: center;
 }
 
+.form-input-email:focus-visible {
+  outline: none;
+  border: 1px solid #000;
+}
+
 .form-submitBtn {
   background-color: #000;
-  border: none;
+  border: 1px solid #000;
   border-radius: 0 20px 20px 0;
   padding: 10px 20px;
   color: #fff;
   font-weight: 600;
+  cursor: pointer;
+}
+
+.form-submitBtn:hover {
+  background-color: rgb(240, 103, 30);
+  border: 1px solid rgb(240, 103, 30);
 }
 
 .description {
@@ -419,6 +460,10 @@ header {
 .description a {
   color: #222;
   text-decoration: underline;
+}
+
+.description a:hover {
+  color: rgb(240, 103, 30);
 }
 
 /* footer */

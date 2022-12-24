@@ -136,6 +136,7 @@ a {
 /* header */
 header {
   position: fixed;
+  top: 0;
   z-index: 9;
 
   width: 100%;
@@ -245,6 +246,102 @@ header {
 
 .navbar-toggle:checked ~ .links > a {
   transition: color 0.2s ease-out 0.15s;
+  color: #555;
+}
+
+/* main */
+.product-panel {
+  margin-top: 50px;
+  padding: 30px;
+}
+
+.panel-title {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.panel-sort-bar {
+  margin: 0 auto 20px;
+  width: 90%;
+  text-align: center;
+}
+
+.sort {
+  width: 200px;
+  height: 2.5rem;
+  margin-top: 10px;
+  margin-left: 10px;
+  padding-left: 10px;
+  border-radius: 5px;
+  border: 1px inset #777;
+  font-size: 0.9rem;
+}
+
+.panel-clothes {
+  margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 15px;
+}
+
+.clothes-img {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.clothes-img-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.clothes-img-model {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+
+  transition: opacity 0.2s ease-out;
+  opacity: 0;
+}
+
+.action-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+.clothes-item > p {
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+.clothes-name {
+  padding-top: 8px;
+}
+
+.clothes-price {
+  padding-top: 3px;
+  font-weight: 500;
+}
+
+.clothes-item:hover .clothes-img-model {
+  opacity: 1;
+}
+
+.panel-items-count {
+  text-align: center;
+  font-size: 0.8rem;
+
   color: #555;
 }
 
